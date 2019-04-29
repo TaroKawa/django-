@@ -18,11 +18,12 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>I
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="https://qiita.com/fantasista_21jp/items/9419ca4ab3bb8e1ee4c5">Udemy</a>
       </li>
+      <!--
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Dropdown
@@ -37,18 +38,24 @@
       <li class="nav-item">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
       </li>
+      -->
     </ul>
+      <!--
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+    -->
   </div>
 </nav>
 <div class="container">
 
 <!--<h1>ようこそ、太郎のブログへ!</h1>-->
-<h2> 最初の投稿! </h2>
+<h3> 最初の投稿! </h3>
 <!-- djangoのtemplate engineの呼び出しの方法-->
+    {% load static %}
+    <img src="{%static 'posts/ubuntu.png' %}" class ="img-fluid rounded" style="max-height: 200px;"/>
+    <hr>
 {% for post in posts.all %}
 
 <a href="{% url 'post_detail' post.id %}" >{{post.title}} </a>
@@ -56,7 +63,7 @@
 <br/> <br/>
 {{ post.published}}
 <br/> <br/>
-<img src="{{post.image.url}}" class="img-fluid rounded"/>
+<img src="{{post.image.url}}" class="img-fluid rounded" style="max-height: 200px;"/>
 <br/> <br/>
 {{ post.summary}}
 <br/> <br/>
